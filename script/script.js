@@ -34,7 +34,6 @@ async function getImageInfo(url) {
     img.onerror = reject;
   });
 }
-
 function displayImageInfo(url, container) {
   getImageInfo(url)
     .then((info) => {
@@ -55,21 +54,21 @@ function displayImageInfo(url, container) {
       sizeElement.textContent = `Size: ${sizeInKB} KB`;
       container.appendChild(sizeElement);
 
-      const initialSize = 500; // Replace with the actual initial size in bytes
-      const finalSize = info.size;
-      const percentageReduction = ((initialSize - finalSize) / initialSize) * 100;
+      const originalImage = images.find((img) => img.src === url);
+      if (originalImage) {
+        const originalSize = originalImage.dataset.originalSize;
+        const percentageReduction = ((originalSize - info.size) / originalSize) * 100;
 
-      const percentageReductionElement = document.createElement("p");
-      percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
-      container.appendChild(percentageReductionElement);
+        const percentageReductionElement = document.createElement("p");
+        percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
+        container.appendChild(percentageReductionElement);
+
+        const originalImageUrl = `imagenes/${originalImage.dataset.originalFilename}`;
+        const originalImageElement = document.createElement("img");
+        originalImageElement.src = originalImageUrl;
+        originalImageElement.style.maxWidth = "100%";
+        container.appendChild(originalImageElement);
+      }
     })
     .catch(console.error);
 }
-
-const container = document.querySelector("#image-info-container");
-
-images.forEach((img, i) => {
-  displayImageInfo(img.src, infoContainers[i]);
-});
-
-
