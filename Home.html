@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Format Experiment</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="bg-pink-500 text-white text-center p-5">
@@ -18,36 +18,24 @@
     <a href="PlujaEstels.html">Pluja d'estels</a>
     <a href="PostaDeSol.html">Posta de sol</a>
     <a href="Transparency.html">Transparency</a>
+    <a href="avif.html">AVIF</a>
   </nav>
-  <!-- Agregar la tabla al final de la página -->
-  <section class="text-center p-10">
-    <h2 class="text-2xl font-bold mb-4">Image Information Table</h2>
-    <table class="table-auto mx-auto" id="image-info-table">
-      <thead>
-        <tr>
-          <th class="px-4 py-2">Image Name</th>
-          <th class="px-4 py-2">Original Size</th>
-          <th class="px-4 py-2">JPG (Saving %)</th>
-          <th class="px-4 py-2">WebP (Saving %)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Las filas de la tabla se llenarán dinámicamente con JavaScript -->
-      </tbody>
-    </table>
-  </section>
+  
   <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
     <div>
-      <img src="images/homer.gif" alt="Homer" class="w-full" />
-      <div class="image-info"></div>
+      <img src="images/homer.gif" alt="Homer" class="w-full">
     </div>
     <div>
-      <img src="webp/homer.webp" alt="Logotip" class="w-full" />
-      <div class="image-info"></div>
+      <img src="images/logotip.png" alt="Homer" class="w-full">
     </div>
     <div>
-      <img src="images/logotip.png" alt="Logotip" class="w-full" />
-      <div class="image-info"></div>
+      <img src="images/plujaEstels.jpg" alt="Homer" class="w-full">
+    </div>
+    <div>
+      <img src="images/postaDeSol.jpg" alt="Homer" class="w-full">
+    </div>
+    <div>
+      <img src="images/transparency.png" alt="Homer" class="w-full">
     </div>
   </main>
 
